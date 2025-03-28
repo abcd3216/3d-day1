@@ -1,25 +1,117 @@
-<h1>BOB 郭哲瑋的網頁#進步#生活#資訊</h1>
-<h2>個人經歷</h2>
-<p>就讀國立暨南國際大學資訊管理學系</p>
-<p>在家樂福和物流公司打工過，擅長體力活和與他人交流之能力</p>
-<p>英文檢定多益500分</p>
-<p>請多多指教</p>
-<hr/>
-<button>按讚</button>
-<button>捐款</button>
-<style>
-    button{
-        color:aliceblue;
-        background-color: black;
-        width:80px;
-        height:36px;
-        border-radius:20px;
-        border-style:none;
-        cursor:pointer;
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <title>郭哲瑋的個人介紹</title>
+  <style>
+    body {
+      font-family: "Noto Sans TC", sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
     }
-</style>
-<a href="https://skfb.ly/puTqI" target="_blank">
-    <button>3D作品</button>
-</a>
 
-<!--h是標籤(數字越小字越大),p是指段落,hr是分隔線,br是換行-->
+    .container {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 20px;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 32px;
+      margin-bottom: 10px;
+    }
+
+    .section {
+      margin-bottom: 30px;
+    }
+
+    .section h2 {
+      font-size: 22px;
+      color: #555;
+      border-left: 4px solid #0bd341;
+      padding-left: 10px;
+      margin-bottom: 10px;
+    }
+
+    .section p {
+      font-size: 16px;
+      line-height: 1.6;
+      color: #333;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: space-around;
+      margin-top: 30px;
+    }
+
+    .btn {
+      padding: 12px 24px;
+      border: none;
+      border-radius: 20px;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+      display: inline-block;
+      text-align: center;
+    }
+
+    a.btn {
+      text-decoration: none;
+    }
+
+    .like {
+      background-color: #d32f2f;
+    }
+
+    .donate {
+      background-color: #00838f;
+    }
+
+    .work3d {
+      background-color: #ef6c00;
+    }
+
+    .liked {
+      background-color: #1525d2 !important;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>
+        <img src="你的圖片連結.jpg" alt="個人照片" style="width: 50px; height: 50px; border-radius: 50%; vertical-align: middle; margin-right: 10px;" />
+        I'm 郭哲瑋
+      </h1>
+    
+    <div class="section">
+      <h2>個人經歷</h2>
+      <p>就讀國立暨南國際大學資訊管理學系。</p>
+      <p>在家樂福和物流公司打工過，增進體力活和與他人交流之能力。</p>
+      <p>英文檢定多益500分。</p>
+    </div>
+
+    <div class="buttons">
+      <button class="btn like" id="likeBtn">按讚</button>
+      <a class="btn work3d" href="https://sketchfab.com/ncnu_global" target="_blank">3D作品</a>
+      <a class="btn donate" href="https://www.ctbcbank.com/twrbo/zh_tw/onlinecounter_index/digital_service/digital_service_ib.html" target="_blank">捐款</a>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById("likeBtn").addEventListener("click", function () {
+      this.classList.toggle("liked");
+      this.textContent = this.classList.contains("liked") ? "已按讚" : "按讚";
+    });
+    document.getElementById("donateBtn").addEventListener("click", function () {
+      alert("感謝您的支持！目前尚未開放捐款功能。");
+    });
+  </script>
+</body>
+</html>
